@@ -104,7 +104,7 @@ npm run dev
 ![Alt Görev Filtre](Screenshots/filterSubTasks.png)
 
 ### Görev Detayları
-![Görev Detay](Screenshots/taskDetails.png)
+![Görev Detay](Screenshots/TaskDetails.png)
 
 ### Alt Görev Detayları
 ![Alt Görev Detay](Screenshots/subTaskDetails.png)
