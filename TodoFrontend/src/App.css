@@ -1,0 +1,1804 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+    overflow: hidden;
+
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: #193441;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  justify-content: flex-end; /* içerik sağa yaslanır */
+  font-weight: bold;
+  font-size: 1.1rem;
+  gap: 10px;
+}
+
+.user-info {
+  margin-right: 10px;
+  user-select: none; /* yazı seçilmesin */
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.285);
+
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 75px; /* header yüksekliği kadar aşağı */
+  right: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 1100;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu button:hover {
+  background-color: #e2e2e2;
+}
+
+
+
+
+
+
+
+
+.board-add{
+  display: flex!important;
+  justify-content:end!important;
+  margin: 0!important;
+  min-height: 120px!important;
+  padding-bottom: 0!important;
+}
+.board-update{
+  display: flex!important;
+  justify-content:center!important;
+  margin: 0!important;
+  min-height: 120px!important;
+  padding: 0!important;
+  overflow-y: hidden!important;
+}
+.board-update input{
+  cursor: text;
+}
+.add-board-button{
+  display:flex;
+  border: 2px solid white; 
+  border-radius: 6px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease-in-out;
+  font-weight: 400;
+  padding: 5px 12px !important;
+
+}
+.add-board-button div{
+  width: 40px;
+  height: 40px;
+  background-image: url("https://img.icons8.com/ios/50/f2b134/plus-key.png");
+  background-size: cover;
+  transition: all 0.25s ease-in-out;
+
+}
+.add-board-button:hover{
+    font-weight: 500!important;
+    color: #F2B134!important;
+}
+.add-board-button:hover div{
+    background-image: url("https://img.icons8.com/ios-filled/50/f2b134/plus-key.png");
+  transition: all 0.25s ease-in-out;
+
+}
+
+.add-board-button.cancel{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-in-out;
+}
+.add-board-button.cancel:hover{
+  border: 2px solid white; 
+  background-color: #BF381A;
+  color: white!important;
+}
+.add-board-button.cancel div{
+  background-image: none;
+  width: 0;
+  height: 0;
+}
+.add-board-button.ok{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #4FB99F;
+    transition: all 0.25s ease-in-out;
+}
+.add-board-button.ok:hover{
+  border: 2px solid white; 
+  color: white!important;
+}
+.add-board-button.ok div{
+  background-image: none;
+  width: 0;
+  height: 0;
+}
+
+.add-board-form{
+  display: flex;
+}
+.add-board-input{
+    background-color: transparent;
+  color: white;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  text-align: left;
+  width: 100%;
+  border: 2px solid white;
+  border-right: none; /* Sağ kenarı kaldır */
+  border-radius: 6px 0 0 6px; /* Sadece sol üst ve sol alt köşeler yuvarlak */
+  outline: none;
+}
+.add-board-input::placeholder{
+  color: rgba(255, 255, 255, 0.8);
+}
+.add-board-save-button{
+  background-color: transparent;
+  background-image: url("https://img.icons8.com/ios/50/f2b134/save--v1.png");
+  background-size: 35px 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease, color 0.25s ease;
+  text-align: left;
+    border: 2px solid  white;
+  border-left: none; /* Sol kenar yok */
+  border-radius: 0 6px 6px 0; /* Sağ üst ve sağ alt köşeler yuvarlak */
+  padding: 10px 8px!important;
+}
+.add-board-save-button:hover{
+  background-image: url("https://img.icons8.com/ios-filled/50/f2b134/save--v1.png");
+  transition: all 0.25s ease, color 0.25s ease;
+}
+
+
+
+/*
+
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+
+
+
+
+
+
+
+
+
+main::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+main:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.scroll-visible::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+}
+
+main:hover {
+  scrollbar-color: rgba(0,0,0,0.3) transparent;
+}
+
+
+*/
+
+
+
+
+
+.navbar_list::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.navbar_list::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar_list:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar_list:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 75px; /* Header'ın hemen altı */
+  left: 0;
+  width: 200px; /* Sabit genişlik */
+  height: calc(100vh - 75px); /* Header yüksekliği çıkarıldı */
+  background-color: #3E606F;
+  padding: 20px;
+  padding-right: 5px;
+  color: white;
+  overflow-y: auto; /* İçerik taşarsa scroll olsun */
+  z-index: 900;
+  box-sizing: border-box;
+  
+}
+
+.navbar_list {
+  background-color: #3E606F;
+  height: max-content;
+  overflow: hidden;
+  overflow-y:scroll;
+  list-style: none;
+  padding: 0;
+  padding-right: 5px;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* alt alta */
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  margin-bottom: 12px;
+  padding-bottom: 80px ;
+}
+.categoryButtonWrapper{
+  position: relative;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  transition: height 0.4s ease-in-out;
+  
+}
+.categoryButtonWrapper.deleted{
+  height: 0px;
+  overflow: hidden;
+}
+.categoryButtonWrapper.updating{
+  height: 120px;
+  overflow: hidden;
+}
+.categoryButton{
+  flex-grow: 1;
+  border: 2px solid white;
+  border-right: none; /* Sağ kenarı kaldır */
+  border-radius: 6px 0 0 6px; /* Sadece sol üst ve sol alt köşeler yuvarlak */
+  white-space: nowrap;        /* Metni tek satır yap */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+
+.categoryDropdownButton{
+  border: 2px solid white;
+  border-left: none; /* Sol kenar yok */
+  border-radius: 0 6px 6px 0; /* Sağ üst ve sağ alt köşeler yuvarlak */
+  padding: 10px 8px!important;
+
+}
+
+.navbar_list button {
+  background-color: transparent;
+  color: white;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  text-align: left;
+}
+
+.navbar_list button:hover{
+  background-color: white;
+  color: #3E606F;
+  outline: none;
+}
+
+
+
+main {
+  margin-top: 75px; /* header yüksekliği kadar boşluk */
+  margin-left: 200px; /* navbar genişliği kadar boşluk */
+  min-height:calc(100vh - 75px); /* minimum yükseklik */
+  min-width: calc(100vw - 200px); /* minimum genişlik */
+  background-color: #EFF8FB;
+  white-space: nowrap; /* inline elementlerin satır kaymasını engeller, yatayda sıralanır */
+  padding: 20px;
+  /* width: max-content;  bunu kaldırdım çünkü genişliği min-width ile ayarlıyoruz */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  /* Dikey scroll varsa */
+
+}
+
+
+
+
+
+
+
+
+/* Webkit (Chrome, Edge, Safari) */
+main::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover durumunda görünür yap */
+main:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* scrollVisible sınıfı varsa görünür yap */
+.scroll-visible::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* Firefox için */
+main:hover {
+  scrollbar-color: rgba(0,0,0,0.3) transparent;
+}
+
+.scroll-visible {
+  scrollbar-color: rgba(0,0,0,0.3) transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.task-list2 {
+  display: flex;
+  flex-direction: row; 
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  width: max-content;
+  flex-wrap: nowrap; 
+}
+
+
+
+
+
+
+.task-list {
+  display: flex;
+  flex-direction: row; 
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  width: max-content;
+  flex-wrap: nowrap; 
+}
+
+
+.task-box {
+  position: relative;
+  width: 450px;
+  height: max-content;
+  background-color: #F2F2F2;
+  padding: 8px;
+  margin: 4px;
+  border-radius: 4px;
+  flex-shrink: 0; /* scroll yaparken küçülmesin */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: all 0.3s ease; /* animasyon geçişi */
+  transform: scale(1); /* başlangıç ölçeği */
+  color: #333; /* varsayılan metin rengi, istersen ekle */
+  z-index: 1;
+  opacity: 1;
+}
+
+.task-box.deleted{
+
+  opacity: 0;
+  width: 0; /* istersen yüksekliği de küçültebilirsin */
+  margin: -10px;
+  padding: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, width 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+}
+
+
+
+/* Hover efekti */
+.taskk-box:hover {
+  transform: scale(1.05); /* %5 büyütme */
+  background-color: #dcdcdc; /* biraz daha koyu arka plan */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* gölgeyi biraz güçlendir */
+  color: #111; /* metin rengi koyulaşsın */
+  cursor: pointer; /* fare imlecini pointer yap */
+}
+
+.add-task-box-wrapper{
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 70vh;
+  transition: width 0.4s ease-in-out, transform 0.4s ease-in-out; 
+
+}
+.add-task-box-wrapper-active{
+  display: flex;
+  position:static;
+  align-items:baseline;
+  padding: 0;
+  margin: 0;
+  width: 450px;
+  transition: width 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+.add-task-box {
+  position: absolute;
+  left: -125px;
+  display: flex;
+  width: 200px;
+  height: min-content;
+  background-color: white;
+  box-shadow: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: width 0.4s ease-in-out, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.4s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  padding-top: 10px;
+
+  /* Yazıyı 90 derece döndür */
+  transform: rotate(90deg);
+  transform-origin: center; /* döndürme merkezini ortala */
+  font-size: 1rem;
+  color: #3E606F;
+  user-select: none;
+  border: #3E606F 2px solid;
+}
+
+/* Hover efekti */
+.add-task-box:hover {
+  background-color:#3E606F;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.add-task-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box{
+  scrollbar-width:thin;
+}
+
+.expandable-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+
+
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  margin-top: 4px;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.form-error {
+  color: #f44336;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+  align-items:center;
+}
+.form-upload_buttons{
+  display: flex;
+  flex-direction: column;
+}
+.form-template {
+  font-size: small;
+  text-decoration: none;
+  color: #4a90e2;
+}
+
+.form-template:hover {
+  text-decoration: underline;
+}
+
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  background-color: #4FB99F;
+  color: white;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #5ddfbf;
+}
+
+.btn-cancel {
+  background-color: #BF381A;
+  color: white;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: #ea4621;
+}
+
+.btn-upload{
+  background-color: #F2B134;
+  color: white;
+}
+.btn-upload:hover:not(:disabled) {
+  background-color: #fcca6d;
+}
+
+
+
+.content-box ul {
+  list-style: none;
+  padding-left: 0; /* soldaki boşluğu kaldırmak için */
+  margin-left: 0;  /* gerekirse margin'i de sıfırla */
+}
+
+
+
+.expandable-box {
+  overflow: hidden;
+  transition: height 0.4s ease, padding 0.4s ease, background-color 0.4s ease;
+  background-color: #f9f9f9;
+  
+}
+
+.expandable-box.collapsed {
+  
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+  padding: 0 15px; /* Yatay boşluk ver */
+}
+
+.expandable-box.expanded {
+  height: 420px; /* İçeriğine göre büyük bir değer */
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  
+}
+
+
+
+.subtask-box-li {
+  position: relative;
+  margin-bottom: 15px;
+  cursor: default;
+  width: 100%;
+  height: max-content;
+}
+
+.subtask-box {
+  width: 100%;
+  max-height: 500px;
+  background: #FFF4E0;
+  border-radius: 4px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  cursor: default;
+}
+
+.subtask-box.deleted{
+  opacity: 0;
+  height: 0; 
+  margin: -10px;
+  padding: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+}
+
+
+.overlay{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 4px;
+  background-color: transparent; /* yarı transparan siyah */
+  z-index: 9;
+  border: #4FB99F solid 2px;
+}
+.pass-overlay{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1); /* yarı transparan siyah */
+  z-index: 10;
+  border: #BF381A solid 2px;
+
+}
+.subtaskk-box:hover {
+  background-color: #ffe5b4; /* biraz daha koyu, ama çok fazla değil */
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  cursor: pointer;
+}
+
+
+.subtask-header {
+  display: flex;
+  position: relative;
+  margin:-20px;
+  padding: 10px 20px;
+  margin-bottom: -10px;
+  margin-top: -15px;
+  z-index: 11;
+  flex-direction: column;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; 
+}
+
+.subtask-header:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.task-header {
+  display: flex;
+  position: relative;
+  margin: -8px;
+  padding: 15px;
+  margin-bottom: 2px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 12;
+
+  /* Transition ekledik */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* İmleç değişsin */
+}
+
+/* Hover efekti */
+.task-header:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Tıklanınca olacak stil */
+.task-header.active, /* aktif class ile */
+.task-header.clicked { /* ya da clicked class ile */
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dropdown-trigger {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 2px;
+  top: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  user-select: none;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 13;
+  transition: all 0.2s ease-in-out;
+}
+.dropdown-trigger:hover{
+  font-size: 26px;
+}
+
+.dropdown-list {
+  color: #333;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index:11;
+  right: 0;
+  top: 0;
+}
+.dropdown-list.task{
+  top: 55px!important;
+}
+.dropdown-list.subtask{
+  top: 39px!important;
+}
+.dropdown-list.board{
+  position: absolute;
+  top: 90%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 0;
+  min-width: 120px;
+  z-index: 999;
+}
+.dropdown-list li {
+  padding: 6px 9px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-list li:hover {
+  background-color: #f0f0f0;
+}
+
+
+.subtask-name{
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  max-width: 350px;
+  transition: font-size 0.4s ease-in-out, height 0.4s ease-in-out;  
+}
+.subtask-name.expand{
+  height: 35px;
+  font-size: 0.9rem;
+  overflow-y: auto;      
+  white-space: normal;
+  transition: font-size 0.4s ease-in-out, height 0.4s ease-in-out;  
+}
+
+.task-name{
+  font-size: 1.2rem;
+  color: #333;
+  height: 25px;
+  margin: 0;
+  max-width: 330px;
+  transition: font-size 0.4s ease-in-out, height 0.4s ease-in-out;  
+}
+.task-name.expand{
+  height: 40px;
+  font-size: 1.1rem;
+  overflow-y: auto;       
+  white-space: normal;
+  transition: font-size 0.4s ease-in-out, height 0.4s ease-in-out; 
+}
+.sub-priority {
+  display: inline-block;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.6rem;
+  margin: 2px;
+  user-select: none;
+  border-radius: 10%;
+}
+.priority {
+  display: inline-block;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-family: monospace;
+margin: 5px;
+  user-select: none;
+  border-radius: 10%;
+}
+
+.priority.low, .sub-priority.low{
+  background-color: #4FB99F; /* yeşil */
+}
+
+.priority.medium, .sub-priority.medium{
+  background-color: #F2B134; /* turuncu */
+}
+
+.priority.high, .sub-priority.high {
+  background-color: #BF381A; /* kırmızı */
+}
+.task-name, .subtask-name {
+  white-space: nowrap;       /* tek satırda tut */
+  overflow: hidden;          /* taşanı gizle */
+  text-overflow: ellipsis;   /* ... koy */
+}
+.subtask-content{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.complete-button {
+  background-color: transparent;
+  background-image: url("https://img.icons8.com/ios/50/4fb99f/ok--v1.png");
+  background-size: cover; /* veya contain */
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  width: 30px;  /* resmin orijinal boyutuna göre ayarla */
+  height: 30px;
+  color: #fff;
+  border: none;
+  transition: background-image 0.3s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.complete-button:hover {
+  transform: scale(1.02);
+    background-image: url("https://img.icons8.com/ios-filled/50/4fb99f/ok--v1.png");
+}
+
+.complete-button:active {
+  transform: scale(0.98);
+}
+
+.complete-button:disabled {
+    background-image: none;
+  transition: background-image 0.3s ease, transform 0.1s ease;
+    width: 70px;  
+  height: 30px;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.task-filter_button{
+  position: absolute;
+  right: 60px;
+  top: 9px;
+  margin: 5px;
+  background-color: transparent;
+  background-image: url("https://img.icons8.com/ios/50/filter--v1.png");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 23px;  
+  height: 23px;
+  color: #fff;
+  border: none;
+  z-index: 15!important;
+  transition: background-image 0.3s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+.task-filter_button:hover{
+  transform: scale(1.2);
+}
+
+.detail-button {
+  position: absolute;
+  right: 30px;
+  top: 7px;
+  margin: 5px;
+  background-color: transparent;
+  background-image: url("https://img.icons8.com/sf-regular-filled/48/333333/expand-arrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  width: 25px;  
+  height: 25px;
+  color: #fff;
+  border: none;
+  z-index: 999!important;
+  transition: background-image 0.3s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+.detail-button.active{
+    transform: rotate(180deg);
+}
+.detail-button.active:hover{
+transform: rotate(180deg) scale(1.3);
+
+    /*background-image: url("https://img.icons8.com/sf-ultralight-filled/50/333333/expand-arrow.png");*/
+}
+
+
+.detail-button:hover {
+  transform: scale(1.3);
+   /* background-image: url("https://img.icons8.com/sf-ultralight-filled/50/333333/expand-arrow.png");*/
+}
+
+.detail-button:active {
+  transform: scale(1.3);
+}
+
+.detail-button:disabled {
+    background-image: none;
+  transition: background-image 0.3s ease, transform 0.1s ease;
+    width: auto;  /* resmin orijinal boyutuna göre ayarla */
+  height: auto;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+.subtask-description {
+  position: relative;
+  z-index: 10;
+  height: 2rem;
+  width:310px ;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  color: #555;
+  margin: 0;
+  white-space: nowrap;       /* tek satırda tut */
+  overflow: hidden;          /* taşanı gizle */
+  text-overflow: ellipsis;   /* ... koy */
+  transition: height 0.4s ease-in-out; 
+}
+.subtask-description.expand{
+   height: 20rem; 
+   overflow-y: auto;       /* Dikey taşma olursa scroll çıksın */
+  white-space: normal;
+   transition: height 0.4s ease-in-out; 
+
+}
+
+.task-description {
+  position: relative;
+  z-index: 10;
+  background-color: #FFF4E0;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  height:0rem;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #555;
+  overflow: hidden;          /* taşanı gizle */
+  text-overflow: ellipsis;   /* ... koy */
+  transition: height 0.4s ease-in-out; 
+}
+.task-description.expand{
+    padding: 6px 0;
+   height: 20rem; 
+   overflow-y: auto;       /* Dikey taşma olursa scroll çıksın */
+  white-space: normal;
+    transition: height 0.4s ease-in-out; 
+
+}
+
+
+
+.task-filters {
+  position: relative;
+  background-color: white;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  height:0rem;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  transition: height 0.4s ease-in-out; 
+}
+.task-filters.expand{
+  height: 20rem; 
+  overflow: hidden;
+  transition: height 0.4s ease-in-out; 
+
+}
+
+.task-filters-wrapper{
+  padding: 5px 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 17rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.task-filters-main {
+  position: relative;
+  background-color: white;
+  z-index: 10;
+  border-radius: 5px;
+  width: 0;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  height:0rem;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  transition: height 0.4s ease-in-out; 
+}
+.task-filters-main.expand{
+  position: fixed;
+  width: calc(100% - 200px);
+  margin-left: -20px;
+  top: 125px;
+  height: 20rem; 
+  overflow: hidden;
+  transition: height 0.4s ease-in-out; 
+
+}
+.task-filters-main-wrapper{
+  padding: 5px 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 17rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.task-filters-main-wrapper form{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+
+
+
+
+.delete-overlay{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.delete-alert{
+  position: absolute;
+  right: 50%;
+  left: 40%;
+  top: 40%;
+  bottom: 50%;
+  width:400px;
+  height: 200px;
+  z-index: 999999;
+  background-color: #F2F2F2;
+  padding: 2rem;
+  padding-top: 50px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+ 
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.alertBtn {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+.alertBtn-ok{
+  background-color: #4FB99F;;
+  color: white;
+}
+
+.alertBtn-danger {
+  background-color: #BF381A;;
+  color: white;
+}
+
+.alertBtn-cancel {
+  background-color: #F2B134;
+    color: white;
+
+}
+
+.alertBtn-danger:hover {
+  background-color: #a53d26;
+  
+}
+
+.alertBtn-cancel:hover {
+  background-color: #c48f2d;
+}
+.alertBtn-ok:hover{
+  background-color: #3c917b;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.subtask-footer {
+  display: flex;
+  justify-content: space-between; /* öğeleri yatayda iki uca yay */
+  align-items: center;
+  font-size: 0.8rem;
+  color: #666;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: relative; /* absolute içeren öğeler varsa parent olarak kalabilir */
+}
+.task-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height: 32px;
+}
+.task-detail{
+  padding: 5px 10px;
+  color: #111;
+  border-radius: 4px;
+  background-color: #6cb3d2;
+  z-index: 11;
+}
+.task-detail:hover{
+  background-color: #319fce;
+}
+.tags {
+  position: static; /* ya da hiç belirtme, normal akışta kalsın */
+  /* left: 0; kaldır */
+}
+.dates{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.dates span {
+  position: static;
+  font-size: 0.8rem;
+  color: #666;
+  /* right: 0; kaldır */
+}
+
+
+.status {
+  border-radius: 20px;
+  display: inline-block;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-family: monospace;
+margin: 5px;
+  user-select: none;
+}
+
+
+.status.active {
+  background-color: #F2B134;
+  color: white;
+}
+
+.status.completed {
+  background-color: #4FB99F;
+  color: white;
+}
+.status.missed {
+  background-color: #BF381A;
+  color: white;
+}
+
+.sub-status {
+  border-radius: 20px;
+  display: inline-block;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-family: monospace;
+    font-size: 0.6rem;
+margin: 2px;
+  user-select: none;
+}
+
+.sub-status.active {
+  background-color: #F2B134;
+  color: white;
+}
+
+.sub-status.completed {
+  background-color: #4FB99F;
+  color: white;
+}
+.sub-status.missed {
+  background-color: #BF381A;
+  color: white;
+}
+
+
+.deadline-medium, .deadline-normal, .deadline-soon{
+  display: inline-block;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-family: monospace;
+margin: 5px;
+  user-select: none;
+
+clip-path: polygon(
+  0% 0%,                /* sol üst köşe (düz) */
+  calc(100% - 10px) 0%, /* sağ üst çıkıntı */
+  100% 50%,             /* sağ tam sivri uç */
+  calc(100% - 10px) 100%, /* sağ alt çıkıntı */
+  0% 100%               /* sol alt köşe (düz) */
+);
+
+}
+.deadline-soon {
+  background-color: #BF381A; /* kırmızı ton */
+
+}
+
+.deadline-medium {
+  background-color: #F2B134; /* turuncu ton */
+
+}
+
+.deadline-normal {
+  background-color: #4FB99F;
+}
+
+
+.sub-deadline-medium, .sub-deadline-normal, .sub-deadline-soon{
+  display: inline-block;
+  color: white;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-family: monospace;
+      font-size: 0.6rem;
+margin: 2px;
+  user-select: none;
+
+clip-path: polygon(
+  0% 0%,                /* sol üst köşe (düz) */
+  calc(100% - 10px) 0%, /* sağ üst çıkıntı */
+  100% 50%,             /* sağ tam sivri uç */
+  calc(100% - 10px) 100%, /* sağ alt çıkıntı */
+  0% 100%               /* sol alt köşe (düz) */
+);
+
+}
+.sub-deadline-soon {
+  background-color: #BF381A; /* kırmızı ton */
+
+}
+
+.sub-deadline-medium {
+  background-color: #F2B134; /* turuncu ton */
+
+}
+
+.sub-deadline-normal {
+  background-color: #4FB99F;
+}
+
+
+
+
+
+
+
+
+
+/* Container ortala ve arka plan */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f4f8;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form stili */
+.login-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Başlık */
+.login-title {
+  margin-bottom: 24px;
+  color: #193441;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Hata mesajı */
+.login-error {
+  margin-bottom: 16px;
+  color: #d9534f;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Başarılı mesaj */
+.login-success {
+  margin-bottom: 16px;
+  color: #5cb85c;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Input alanları */
+.login-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: #193441;
+  box-shadow: 0 0 5px rgba(62, 96, 111, 0.5);
+}
+
+/* Buton */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #193441;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2c4550;
+}
+
+.login-button:disabled {
+  background-color: #7a8a99;
+  cursor: not-allowed;
+}
+
+
+
+.login-register-link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+.login-register-link a {
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: none;
+}
+.login-register-link a:hover {
+  text-decoration: underline;
+}
+
+.register-body{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f0f4f8;
+    align-items: center;
+  justify-content: center;
+
+}
+
+.register-container {
+
+  max-width: 400px;
+  padding: 25px 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #193441;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #344955;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.register-form input[type="text"]:focus,
+.register-form input[type="email"]:focus,
+.register-form input[type="password"]:focus,
+.register-form input[type="date"]:focus {
+  outline: none;
+  border-color: #193441;
+  box-shadow: 0 0 5px rgba(62, 96, 111, 0.5);
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #193441;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.register-form button:disabled {
+  background-color: #7a8a99;
+  cursor: not-allowed;
+}
+
+.register-form button:hover:not(:disabled) {
+  background-color: #2c4550;
+}
+
+.register-form p {
+  margin-top: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.register-form p[style*="red"] {
+  color: #d9534f;
+}
+
+.register-form p[style*="green"] {
+  color: #5cb85c;
+}
+
+
+.content_header{
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.content_header-2{
+  display: flex;
+  position: absolute;
+  top: 75px;
+  left:200px;
+  width: calc(100% - 200px);
+  height: 50px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #2c4550;
+  padding: 0 20px;
+}
+.download-excel{
+  position: fixed;
+  right: 20px;
+  background-color: white;
+  border: 2px solid #3E606F;
+  color: #3E606F;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  text-align: left;
+}
+.download-excel:hover{
+  background-color: #3E606F;
+  color: white;
+  outline: none;
+}
+
+.form-date-group{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.form-date_label-group{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.form-date_label-group label{
+  display: inline-block;
+}
+.form-date_checkbox-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.form-date_checkbox-group input{
+  margin-right: 5px;
+}
+.form-first_section{
+  display: flex;
+  margin-bottom: 20px;
+}
+.form-first_section div{
+  margin-right: 65px;
+}
+.form-footer{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.form-ok_buttons{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: end;
+}
+
+.mydropdown {
+  position: absolute;
+  right: 70px;
+  width: 160px;
+}
+
+.mydropdown__button {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: white;
+  border: 2px solid #3E606F;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  color: #3E606F;
+  outline: none;
+}
+
+.mydropdown__button:hover{
+    background-color: #3E606F;
+  border: 2px solid #3E606F;
+  border-bottom: none;
+  color: white;
+}
+
+
+.mydropdown__list {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  background-color: white;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.mydropdown__item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.mydropdown__item:hover {
+  background-color: #f0f0f0;
+}
+
+.filter_main_button{
+  right: 20px!important;
+}

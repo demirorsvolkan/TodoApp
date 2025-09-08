@@ -1,0 +1,27 @@
+# Visual Studio / VS
+.vs/
+*.user
+*.suo
+
+# Build / derleme klasörleri
+bin/
+obj/
+Debug/
+Release/
+
+# VS Code
+.vscode/
+
+# Node / frontend
+node_modules/
+dist/
+
+# Kendi gizli veriler
+*.env
+appsettings.json
+credentials.json
+secret.key
+
+# Log ve geçici dosyalar
+*.log
+*.tmp
