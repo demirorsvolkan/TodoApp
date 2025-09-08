@@ -71,43 +71,43 @@ npm run dev
 ## Ekran Görüntüleri
 
 ### Giriş Ekranı
-![Giriş](screenshots/login.png)
+![Giriş](Screenshots/login.png)
 
 ### Kayıt Ekranı
-![Kayıt](screenshots/register.png)
+![Kayıt](Screenshots/register.png)
 
 ### Ana Sayfa (Görev Listesi)
-![Ana Sayfa](screenshots/main.png)
+![Ana Sayfa](Screenshots/main.png)
 
 ### Board Ekleme
-![Board Ekle](screenshots/addBoard.png)
+![Board Ekle](Screenshots/addBoard.png)
 
 ### Görev Ekleme
-![Görev Ekle](screenshots/addTask.png)
+![Görev Ekle](Screenshots/addTask.png)
 
 ### Alt Görev Ekleme
-![Alt Görev Ekle](screenshots/addSubTask.png)
+![Alt Görev Ekle](Screenshots/addSubTask.png)
 
 ### Board Düzenleme
-![Board Düzenle](screenshots/editBoard.png)
+![Board Düzenle](Screenshots/editBoard.png)
 
 ### Görev Düzenleme
-![Görev Düzenle](screenshots/editTask.png)
+![Görev Düzenle](Screenshots/editTask.png)
 
 ### Alt Görev Düzenleme
-![Alt Görev Düzenle](screenshots/editSubTask.png)
+![Alt Görev Düzenle](Screenshots/editSubTask.png)
 
 ### Görev Filtre
-![Görev Filtre](screenshots/filterTasks.png)
+![Görev Filtre](Screenshots/filterTasks.png)
 
 ### Alt Görev Filtre
-![Alt Görev Filtre](screenshots/filterSubTasks.png)
+![Alt Görev Filtre](Screenshots/filterSubTasks.png)
 
 ### Görev Detayları
-![Görev Detay](screenshots/taskDetails.png)
+![Görev Detay](Screenshots/taskDetails.png)
 
 ### Alt Görev Detayları
-![Alt Görev Detay](screenshots/subTaskDetails.png)
+![Alt Görev Detay](Screenshots/subTaskDetails.png)
 
 
 
