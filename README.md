@@ -7,17 +7,13 @@ Bu proje iki ayrı bölümden oluşmaktadır:
 
 ## Proje Yapısı
 
-TodoApp/
-│
-├── TodoBackend/         --> ASP.NET Core API
-│   └── WebApplication6/
-│       └── WebApplication6.sln
-│
-├── TodoFrontend/        --> React (Vite)
-│
-├── Screenshots/         --> Uygulama ekran görüntüleri
-│
-└── README.md
+- **TodoBackend/** → ASP.NET Core API  
+  - `WebApplication6/`  
+    - `WebApplication6.sln`
+- **TodoFrontend/** → React (Vite)
+- **Screenshots/** → Application screenshots
+- **README.md**
+
 
 
 
